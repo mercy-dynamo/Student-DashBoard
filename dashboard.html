@@ -16,7 +16,8 @@
             <div class="bg-gray-800 p-6 rounded-xl shadow-lg h-full w-[300px] border border-gray-700 ">
                 <h2 class="text-2xl font-bold text-yellow-400">Student Profile</h2>
                 <div class="mt-4 flex flex-col items-center text-center">
-                    <img src="./pexels-cátia-matos-1072179.jpg" alt="Profile Picture" class="rounded-full w-[200px] h-[200px]">
+                    <img src="./pexels-cátia-matos-1072179.jpg" alt="Profile Picture"
+                        class="rounded-full w-[200px] h-[200px]">
                     <h3 class="text-lg font-bold mt-2">Samarth Patel</h3>
                     <p class="text-gray-400 text-sm">Mercy_dynamo</p>
                     <p class="text-gray-400 text-sm">Rank <span class="font-bold text-white">1,453,252</span></p>
@@ -28,7 +29,7 @@
                 <p class="text-gray-300">Semester: <span class="text-white">4</span></p>
             </div>
         </div>
-        <div class="w-[750px]">
+        <div class="w-[750px] h-full">
             <!-- SGPA & CGPA Section -->
             <div class="mt-6 grid grid-cols-2 gap-4">
                 <div class="bg-gray-800 p-4 rounded-xl shadow-lg border border-gray-700">
@@ -59,21 +60,37 @@
             <div class="mt-6 bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
                 <h3 class="text-lg font-semibold text-yellow-400">Skills</h3>
                 <div class="flex flex-wrap gap-2 mt-2">
-                    <span class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md">C++</span>
-                    <span class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md">JavaScript</span>
-                    <span class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md">React</span>
-                    <span class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md">Node.js</span>
+                    <span
+                        class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md group transition-all duration-300 hover:px-6">C++</span>
+                    <span
+                        class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md group transition-all duration-300 hover:px-6">HTML</span>
+                    <span
+                        class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md group transition-all duration-300 hover:px-6">CSS</span>
+                    <span
+                        class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md group transition-all duration-300 hover:px-6">JavaScript</span>
+                    <span
+                        class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md group transition-all duration-300 hover:px-6">React</span>
                 </div>
             </div>
 
             <!-- Projects Section -->
             <div class="mt-6 bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
                 <h3 class="text-lg font-semibold text-yellow-400">Projects</h3>
-                <ul class="mt-2 text-gray-300">
-                    <li><a href="#" class="text-yellow-500 hover:underline">Paper Trading Website</a> - Stock market
-                        simulation</li>
-                    <li><a href="#" class="text-yellow-500 hover:underline">DSA Solution Hub</a> - LeetCode-like UI for
-                        DSA solutions</li>
+                <ul class="mt-2 ml-5 text-gray-300 list-disc">
+                    <li><a href="https://coffee-project1-sigma.vercel.app/"
+                            class="text-yellow-500 hover:underline">Coffee Project</a> - Responsive Website made with
+                        <img src="./htmlLogo.png" class="w-5 h-5 inline">, <img src="./cssLogo.png"
+                            class="w-5 h-5 inline"> and <img src="./jsLogo.png" class="w-5 h-5 inline">
+                    </li>
+                    <li><a href="https://pizza-menu-psi-orpin.vercel.app/" class="text-yellow-500 hover:underline">Pizza
+                            Menu</a> - Pizza Menu made with <img src="./reactLogo.svg" class="w-5 h-5 inline"></li>
+                    <li><a href="https://profile-card-dusky-eta.vercel.app/"
+                            class="text-yellow-500 hover:underline">Profile Card</a> - Profile Card made with <img
+                            src="./reactLogo.svg" class="w-5 h-5 inline"></li>
+                    <li><a href="https://date-counter-kohl-psi.vercel.app/" class="text-yellow-500 hover:underline">Date
+                            Counter</a> - Date Counter made with <img src="./reactLogo.svg" class="w-5 h-5 inline"></li>
+                    <li><a href="https://steps-blond.vercel.app/" class="text-yellow-500 hover:underline">Steps</a> -
+                        Steps made with <img src="./reactLogo.svg" class="w-5 h-5 inline"></li>
                 </ul>
             </div>
         </div>
@@ -94,16 +111,16 @@
                         data: sgpa,
                         borderColor: 'rgba(255, 193, 7, 1)',
                         backgroundColor: 'rgba(255, 193, 7, 0.2)',
-                        borderWidth: 2,
-                        tension: 0.4,
+                        borderWidth: 2.5,
+                        tension: 0.3,
                     },
                     {
                         label: 'CGPA',
                         data: cgpa,
                         borderColor: 'rgba(75, 192, 192, 1)',
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderWidth: 2,
-                        tension: 0.4,
+                        borderWidth: 2.5,
+                        tension: 0.3,
                     }
                 ]
             },
@@ -113,7 +130,7 @@
                 scales: {
                     y: {
                         beginAtZero: false,
-                        min: 8.5,
+                        min: 8.9,
                         max: 9.5
                     }
                 }
