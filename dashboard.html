@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div class="w-full p-6 flex gap-6 justify-center">
+        <div class="w-[450px] flex justify-end">
+            <!-- Profile Section -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg h-full w-[300px] border border-gray-700 ">
+                <h2 class="text-2xl font-bold text-yellow-400">Student Profile</h2>
+                <div class="mt-4 flex flex-col items-center text-center">
+                    <img src="./pexels-cátia-matos-1072179.jpg" alt="Profile Picture" class="rounded-full w-[200px] h-[200px]">
+                    <h3 class="text-lg font-bold mt-2">Samarth Patel</h3>
+                    <p class="text-gray-400 text-sm">Mercy_dynamo</p>
+                    <p class="text-gray-400 text-sm">Rank <span class="font-bold text-white">1,453,252</span></p>
+                    <p class="text-gray-400 mt-2">I like doing coding in C++!</p>
+                    <button class="mt-3 bg-green-600 text-white px-4 py-2 rounded-lg">Edit Profile</button>
+                </div>
+                <p class="text-gray-300">University: <span class="text-white">Nirma University</span></p>
+                <p class="text-gray-300">Degree: <span class="text-white">B.Tech in CSE</span></p>
+                <p class="text-gray-300">Semester: <span class="text-white">4</span></p>
+            </div>
+        </div>
+        <div class="w-[750px]">
+            <!-- SGPA & CGPA Section -->
+            <div class="mt-6 grid grid-cols-2 gap-4">
+                <div class="bg-gray-800 p-4 rounded-xl shadow-lg border border-gray-700">
+                    <h3 class="text-lg font-semibold text-yellow-400">SGPA</h3>
+                    <ul class="text-gray-300">
+                        <li>Semester 1: <span class="text-white">9.14</span></li>
+                        <li>Semester 2: <span class="text-white">9.33</span></li>
+                        <li>Semester 3: <span class="text-white">9.0</span></li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-lg border border-gray-700">
+                    <h3 class="text-lg font-semibold text-yellow-400">CGPA</h3>
+                    <ul class="text-gray-300">
+                        <li>Semester 1: <span class="text-white">9.14</span></li>
+                        <li>Semester 2: <span class="text-white">9.24</span></li>
+                        <li>Semester 3: <span class="text-white">9.15</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SGPA & CGPA Graph -->
+            <div class="mt-6 bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 flex flex-col items-center">
+                <h3 class="text-lg font-semibold text-yellow-400">SGPA & CGPA Trend</h3>
+                <canvas id="sgpaCgpaChart" class="mt-10 w-full"></canvas>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="mt-6 bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
+                <h3 class="text-lg font-semibold text-yellow-400">Skills</h3>
+                <div class="flex flex-wrap gap-2 mt-2">
+                    <span class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md">C++</span>
+                    <span class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md">JavaScript</span>
+                    <span class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md">React</span>
+                    <span class="bg-yellow-500 text-black px-3 py-1 rounded-full shadow-md">Node.js</span>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="mt-6 bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
+                <h3 class="text-lg font-semibold text-yellow-400">Projects</h3>
+                <ul class="mt-2 text-gray-300">
+                    <li><a href="#" class="text-yellow-500 hover:underline">Paper Trading Website</a> - Stock market
+                        simulation</li>
+                    <li><a href="#" class="text-yellow-500 hover:underline">DSA Solution Hub</a> - LeetCode-like UI for
+                        DSA solutions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('sgpaCgpaChart').getContext('2d');
+        const sgpa = [9.14, 9.33, 9.0];
+        const cgpa = [9.2, 9.24, 9.15];
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Semester 1', 'Semester 2', 'Semester 3'],
+                datasets: [
+                    {
+                        label: 'SGPA',
+                        data: sgpa,
+                        borderColor: 'rgba(255, 193, 7, 1)',
+                        backgroundColor: 'rgba(255, 193, 7, 0.2)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                    },
+                    {
+                        label: 'CGPA',
+                        data: cgpa,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                    }
+                ]
+            },
+            options: {
+                responsive: false,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 8.5,
+                        max: 9.5
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
